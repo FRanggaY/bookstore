@@ -41,7 +41,7 @@ class ManagerController extends Controller
         return view('manager.akun.index');
     }
     public function storeaccount(request $request){
-        $data = $request->validate([
+        $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
             'telpon' => 'required',
@@ -51,9 +51,23 @@ class ManagerController extends Controller
             'akses' => 'required',
         ]);
 
-        if ( User::create($request->all())) {
+        $success = User::create([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'telpon' => $request->telpon,
+            'status' => $request->status,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'remember_token' => $request->remember_token,
+            'akses' => $request->akses,
+        ]);
+
+        if ($success) {
             return redirect('/tambahakun')->with('success', 'Data Berhasil Dibuat');
         }
         return redirect('/tambahakun')->with('failed', 'Data Gagal Dibuat');
+
+
     }
 }
+

@@ -1,37 +1,21 @@
 @extends('layouts.app')
 @section('content')
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="" class="brand-link">
-      <span class="brand-text font-weight-light">Cetak Struk</span>
-    </a>
-    <a href="/formcetakfaktur" class="brand-link">
-        <span class="brand-text font-weight-light">Back</span>
-      </a>
-</aside>
-<div class="wrapper">
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mt-5">
-          <div class="col-sm-6">
-            <h1 class="m-0">Form Struk</h1>
-          </div><!-- /.col -->
-        </div>
-      </div><!-- /.container-fluid -->
-    </div>
 
-    <!-- /.col-md-6 -->
+<div class="container">
+
+    <!--card -->
     <div class="card">
-        <!-- /.card-header -->
         <div class="card-body">
-          <table class="table table-bordered">
+        <!-- tabel -->
+        <table class="table table-bordered mb-5">
+            <div class="container-fluid">
+                  <h2 class="text-center">Form Struk</h2>
+            </div>
+            <!-- judul tabel -->
             <thead>
               <tr>
                 <th>No</th>
-                <th>Judul</th>
+                <th>Judul Buku</th>
                 <th>Jumlah Beli</th>
                 <th>Harga Satuan</th>
                 <th>PPN</th>
@@ -39,41 +23,55 @@
                 <th>Total</th>
               </tr>
             </thead>
+            <!-- isi tabel -->
             <tbody>
+            <?php
+                $grandtotal=0;
+            ?>
             @foreach ($databukupagination as $buku)
+            <?php
+                $subtotal = ($buku->harga_jual*$buku->jumlah_beli) + ($buku->harga_jual * $buku->ppn/100) - ($buku->harga_jual * $buku->diskon/100);
+            ?>
               <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $buku->id_buku }}</td>
                 <td>{{ $buku->judul }}</td>
+                <td>{{ $buku->jumlah_beli }}</td>
                 <td>{{  $buku->harga_jual  }}</td>
-                <td>{{  $buku->ppn  }}</td>
-                <td>{{  $buku->diskon  }}</td>
-                <td>sfsjk</td>
+                <td>{{  $buku->ppn  }}%</td>
+                <td>{{  $buku->diskon  }}%</td>
+                <td>{{ $subtotal }}</td>
               </tr>
+            <?php
+              $grandtotal+= $subtotal;
+            ?>
             @endforeach
             </tbody>
+            <!-- hasil isi tabel -->
             <thead>
                 <tr>
-                  <th>Total</th>
+                  <th>Jumlah</th>
                   <th colspan="4">{{ $totalbuku }} Buku</th>
                   <th>Grand Total</th>
-                  <th>{{ $totalbuku }} Buku</th>
+                  <th>{{ $grandtotal }}</th>
                 </tr>
                 <tr>
                     <th colspan="5"></th>
                     <th>Bayar</th>
-                    <th>{{ $totalbuku }} Buku</th>
+                    <th>{{ $buku->bayar }}</th>
                   </tr>
                   <tr>
                     <th colspan="5"></th>
                     <th>Kembalian</th>
-                    <th>{{ $totalbuku }} Buku</th>
+                    <th>{{ $buku->kembalian }}</th>
                   </tr>
               </thead>
           </table>
+
+        <!-- tombol cetak -->
+        <a onclick="window.print()" type="submit" class="btn btn-primary btn-block no-print">Cetak</a>
+
         </div>
-
-
+    </div>
 
 
 
@@ -84,9 +82,6 @@
 
 
 </div>
-    <!-- /.login-logo -->
-
-
 
 
 @endsection

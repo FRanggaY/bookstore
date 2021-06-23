@@ -6,25 +6,22 @@
 
 
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-            <a href="/inputdistributor">Back</a>
-          <div class="col-sm-6">
-            <h1 class="m-0">Edit Form Buku</h1>
-          </div>
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <a href="/inputbuku" class="btn btn-primary">Back</a>
+                <div class="col-sm-6">
+                    <h1 class="m-0">Edit Form Buku</h1>
+                </div>
+                </div>
+            </div>
+        </div>
 
 
-    <!-- /.col-md-6 -->
             <form action="/inputbuku/{{ $databuku->id_buku }}/update" method="POST">
                 @csrf
-                <div class="input-group mb-3">
+                <div class="input-group mb-3 px-3">
                     <div class="input-group mb-3">
                         <label class="form-control btn-secondary col-3">Kode Buku</label>
                         <input type="text" class="form-control" name="id_buku" value="{{ $databuku->id_buku }}">
@@ -66,9 +63,11 @@
                     <div class="col-4">
                         <button type="submit" class=" form-control btn btn-primary">Update</button>
                     </div>
+                </div>
             </form>
-          </div>
+    </div>
 
+</div>
 
 @endsection
 

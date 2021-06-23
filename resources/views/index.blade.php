@@ -44,7 +44,7 @@
                   {{ $infolap->alamat }}
                 </p>
                 <p class="card-text">
-                    <img src="{{ asset('uploads/profile/'.$infolap->logo) }}" width="400">
+                    <img src="{{ asset('uploads/profile/'.$infolap->logo) }}" width="300">
                 </p>
 
 

@@ -22,13 +22,16 @@ class Book extends Model
         'diskon',
     ];
     public $timestamps = false;
-    function historyjual(){
-		return $this->hasMany('App\Models\Historyjual');
-	}
-    function sell(){
-		return $this->hasOne('App\Models\Sell');
-	}
-    function pasok(){
-		return $this->hasOne('App\Models\Supplier');
-	}
+
+    public function getfakturID()
+    {
+        return sprintf('FK%05d', $this->id_buku);
+    }
+
+    // function sell(){
+	// 	return $this->hasOne('App\Models\Sell');
+	// }
+    // function pasok(){
+	// 	return $this->hasOne('App\Models\Supplier');
+	// }
 }

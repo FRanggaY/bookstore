@@ -23,7 +23,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index" class="brand-link">
-      <span class="brand-text font-weight-light"> BookStore</span>
+      <span class="brand-text font-weight-light pl-2"> BookStore</span>
     </a>
 
     <!-- Sidebar -->
@@ -31,13 +31,13 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a disabled="disabled" class="d-block">{{ auth()->user()->nama }}</a>
+          <a disabled="disabled" class="d-block pl-2">{{ auth()->user()->nama }}</a>
         </div>
       </div>
 
       <div class="user-panel ">
         <div class="info">
-        <a href="{{ route('change-password') }}" class="nav-link d-block">
+        <a href="{{ route('change-password') }}" class="nav-link d-block pl-2">
             <p>
             Ubah Password
             </p>
@@ -201,7 +201,7 @@
               @endif
               @if (auth()->user()->akses==="admin")
               <li class="nav-item">
-                <a href="{{ route('indextambahpasok') }}" class="nav-link">
+                <a href="{{ route('indexinputpasok') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Input Pasok Buku</p>
                 </a>

@@ -1,80 +1,83 @@
 @extends('layouts.app')
 @section('content')
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="" class="brand-link">
-      <span class="brand-text font-weight-light">Print</span>
-    </a>
-    <a href="/filterpasokbuku" class="brand-link">
-        <span class="brand-text font-weight-light">Back</span>
-      </a>
-</aside>
-<div class="wrapper">
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <a disabled="disabled" class="h1"><b>Book</b>Store</a>
+
+<div class="container">
+    <!--Tombol Print-->
+    <button onclick="window.print()" class="btn btn-primary no-print">Print</button>
+    <!--Bagian Atas-->
+    <div class="px-5 card">
         <div class="row mt-5">
-          <div class="col-sm-6">
-            <h1 class="m-0">LAPORAN BUKU BERDASARKAN DISTRIBUTOR</h1>
-          </div><!-- /.col -->
+            <!--Kiri-->
+          <div class="col-sm-2">
+            <p class="card-text">
+                <img src="{{ asset('uploads/profile/'.$infolap->logo) }}" width="100">
+            </p>
+          </div>
+          <!--Tengah-->
+          <div class="col-sm-8">
+            <h1>
+                {{ $infolap->nama_perusahaan }}
+            </h1>
+            <p class="card-text">
+                {{ $infolap->alamat }}
+                <br>No. Telp {{ $infolap->no_tlpn }} | Web : {{ $infolap->web }} | Email : {{ $infolap->email }}
+            </p>
+            <h2 class="text-center">LAPORAN PASOK BERDASARKAN DISTRIBUTOR</h2>
+            <h2 class="text-center">Nama Distributor : {{  $filterdistributor }} </h2>
+          </div>
+          <!--Kanan-->
+          <div class="col-sm-2">
+            <p class="card-text">
+                Tanggal Cetak :
+                <br>{{ $tanggalcetak }}
+            </p>
+          </div>
         </div>
-        <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">Nama Penulis : {{ $filterdistributor }} </h1>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
     </div>
 
-    <!-- /.col-md-6 -->
+    <!--card -->
     <div class="card">
-        <!-- /.card-header -->
         <div class="card-body">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Kode Buku</th>
-                <th>Judul</th>
-                <th>No ISBN</th>
-                <th>Penulis</th>
-                <th>Penerbit</th>
-                <th>Stok</th>
-                <th>Harga Pokok</th>
-                <th>Harga Jual</th>
-                <th>PPN</th>
-                <th>Diskon</th>
-              </tr>
-            </thead>
-            <tbody>
-            @foreach ($databukupagination as $buku)
-              <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $buku->id_buku }}</td>
-                <td>{{ $buku->judul }}</td>
-                <td>{{ $buku->noisbn }}</td>
-                <td>{{ $buku->penulis }}</td>
-                <td>{{  $buku->penerbit  }}</td>
-                <td>{{  $buku->stok  }}</td>
-                <td>{{  $buku->harga_pokok  }}</td>
-                <td>{{  $buku->harga_jual  }}</td>
-                <td>{{  $buku->ppn  }}</td>
-                <td>{{  $buku->diskon  }}</td>
-              </tr>
-            @endforeach
-            </tbody>
-            <thead>
-                <tr>
-                  <th>Total</th>
-                  <th>{{ $totalbuku }} Buku</th>
-                </tr>
-              </thead>
-          </table>
+        <!-- tabel -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Distributor</th>
+                        <th>Judul Buku</th>
+                        <th>No ISBN</th>
+                        <th>Penulis</th>
+                        <th>Penerbit</th>
+                        <th>Harga Jual</th>
+                        <th>Stok</th>
+                        <th>Jumlah Pasok</th>
+                        <th>Tanggal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($datapasok as $pasok)
+                    <tr>
+                      <td>{{ ++$i }}</td>
+                      <td>{{ $pasok->nama_distributor }}</td>
+                      <td>{{ $pasok->judul }}</td>
+                      <td>{{ $pasok->noisbn }}</td>
+                      <td>{{ $pasok->penulis }}</td>
+                      <td>{{ $pasok->penerbit }}</td>
+                      <td>{{ $pasok->harga_jual }}</td>
+                      <td>{{ $pasok->stok }}</td>
+                      <td>{{ $pasok->jumlah }}</td>
+                      <td>{{ Carbon\Carbon::parse($pasok->created_at)->format('m-d-Y') }}</td>
+                    </tr>
+                  @endforeach
+                </tbody>
+                <thead>
+                    <tr>
+                      <th>Jumlah {{ $totaldata }} Data</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
-
+    </div>
 
 
 
@@ -86,7 +89,6 @@
 
 
 </div>
-    <!-- /.login-logo -->
 
 
 

@@ -15,7 +15,7 @@ class Distributor extends Model
         'telpon',
     ];
     public $timestamps = false;
-    function pasok(){
-		return $this->hasOne('App\Models\Supplier');
-	}
+    // function pasok(){
+	// 	return $this->hasOne('App\Models\Supplier');
+	// }
 }

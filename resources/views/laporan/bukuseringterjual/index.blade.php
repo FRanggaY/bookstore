@@ -6,27 +6,23 @@
 
 
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Data Buku Banyak Terjual</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+          </div>
+        </div>
+      </div>
     </div>
 
 
-    <!-- /.content-header -->
     <div class="card">
-        <!-- /.card-header -->
         <div class="card-body">
             <div class="row mb-5">
                 <div class="col-2">
-                    <a href="" class="form-control btn btn-success ">Export Excel</a>
+                    <a href="{{ route('exportdatabukubanyakterjual') }}" class="form-control btn btn-success ">Export Excel</a>
                 </div>
             </div>
           <table class="table table-bordered">
@@ -47,12 +43,14 @@
             @foreach ($databuku as $buku)
               <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $buku->id_buku }}</td>
+                <td>FK0000{{ $buku->id_buku }}</td>
                 <td>{{ $buku->judul }}</td>
                 <td>{{ $buku->noisbn }}</td>
                 <td>{{ $buku->penulis }}</td>
                 <td>{{  $buku->penerbit  }}</td>
                 <td>{{  $buku->harga_jual  }}</td>
+                <td>{{  $buku->jumlah_beli  }}</td>
+                <td>{{  $buku->total_harga  }}</td>
               </tr>
             @endforeach
             </tbody>
@@ -65,6 +63,10 @@
           </table>
         </div>
 
+    </div>
+  </div>
 
+
+</div>
 @endsection
 

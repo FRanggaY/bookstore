@@ -10,12 +10,14 @@ class Supplier extends Model
     protected $primaryKey = 'id_pasok';
     protected $table = 'tbl_pasok';
     protected $fillable = [
+        'id_buku',
+        'id_distributor',
         'jumlah',
     ];
-    function book(){
-		return $this->belongsTo('App\Models\Book');
-	}
-    function distributor(){
-		return $this->belongsTo('App\Models\Distributor');
-	}
+    // function book(){
+	// 	return $this->belongsTo('App\Models\Book');
+	// }
+    // function distributor(){
+	// 	return $this->belongsTo('App\Models\Distributor');
+	// }
 }

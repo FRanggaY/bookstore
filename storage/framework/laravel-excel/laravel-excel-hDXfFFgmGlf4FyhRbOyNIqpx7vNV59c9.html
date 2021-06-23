@@ -1,0 +1,326 @@
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index" class="brand-link">
+      <span class="brand-text font-weight-light"> BookStore</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a disabled="disabled" class="d-block">Budi</a>
+        </div>
+      </div>
+
+      <div class="user-panel ">
+        <div class="info">
+        <a href="http://127.0.0.1:8000/change-password" class="nav-link d-block">
+            <p>
+            Ubah Password
+            </p>
+        </a>
+        </div>
+      </div>
+
+            <div class="user-panel">
+        <div class="info">
+        <a href="http://127.0.0.1:8000/tambahakun" class="nav-link d-block">
+            <p>
+            Tambah Akun
+            </p>
+        </a>
+        </div>
+      </div>
+      
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <p>
+                                                                Laporan
+                <i class="right fas fa-angle-left"></i>
+                              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                <a href="http://127.0.0.1:8000/formcetakfaktur" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cetak Faktur</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/semuapenjualan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Semua Penjualan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/penjualanpertanggal" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Penjualan Pertanggal</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/semuadatabuku" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Semua Data Buku</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/filterpenulis" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Filter Penulis Buku</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/bukuseringterjual" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buku yang Sering Terjual</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/bukutidakterjual" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buku yang Tidak Pernah Terjual</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/pasokbuku" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pasok Buku</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://127.0.0.1:8000/filterpasokbuku" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Filter Pasok Buku</p>
+                </a>
+              </li>
+                          </ul>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <p>
+                                                                Pengaturan
+                <i class="right fas fa-angle-left"></i>
+                              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                <a href="http://127.0.0.1:8000/profil" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Profil</p>
+                </a>
+              </li>
+                          </ul>
+          </li>
+
+                    <div class="user-panel"></div>
+          <li class="nav-item">
+            <a href="http://127.0.0.1:8000/logout" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Log Out
+              </p>
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+      <div class="mb-5"></div>
+
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookStore | Library of Book</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="http://127.0.0.1:8000/AdminLTE/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="http://127.0.0.1:8000/AdminLTE/dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+  
+
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Laporan Semua Buku</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-5">
+                    <div class="col-2">
+                        <a href="http://127.0.0.1:8000/semuadatabuku/cetak" target="_blank" rel="noopener noreferrer" class="form-control btn btn-primary ">Cetak</a>
+                    </div>
+                    <div class="col-2">
+                        <a href="http://127.0.0.1:8000/semuadatabuku/export" class="form-control btn btn-success ">Export Excel</a>
+                    </div>
+                </div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kode Buku</th>
+                    <th>Judul</th>
+                    <th>No ISBN</th>
+                    <th>Penulis</th>
+                    <th>Penerbit</th>
+                    <th>Stok</th>
+                    <th>Harga Pokok</th>
+                    <th>Harga Jual</th>
+                    <th>PPN</th>
+                    <th>Diskon</th>
+                </tr>
+                </thead>
+                <tbody>
+                                <tr>
+                    <td>1</td>
+                    <td>FK00001</td>
+                    <td>fami</td>
+                    <td>123456</td>
+                    <td>fom</td>
+                    <td>fom</td>
+                    <td>55</td>
+                    <td>10000</td>
+                    <td>15000</td>
+                    <td>10%</td>
+                    <td>10%</td>
+                </tr>
+                                <tr>
+                    <td>2</td>
+                    <td>FK00002</td>
+                    <td>franc</td>
+                    <td>24421</td>
+                    <td>fom</td>
+                    <td>fom</td>
+                    <td>1</td>
+                    <td>15000</td>
+                    <td>15000</td>
+                    <td>10%</td>
+                    <td>10%</td>
+                </tr>
+                                <tr>
+                    <td>3</td>
+                    <td>FK00003</td>
+                    <td>Without Name</td>
+                    <td>12345</td>
+                    <td>Test123</td>
+                    <td>Gramed</td>
+                    <td>50</td>
+                    <td>10000</td>
+                    <td>15000</td>
+                    <td>15%</td>
+                    <td>10%</td>
+                </tr>
+                                <tr>
+                    <td>4</td>
+                    <td>FK00004</td>
+                    <td>Find Me</td>
+                    <td>567890</td>
+                    <td>Test234</td>
+                    <td>Gramed</td>
+                    <td>10</td>
+                    <td>12000</td>
+                    <td>16000</td>
+                    <td>12%</td>
+                    <td>14%</td>
+                </tr>
+                                <tr>
+                    <td>5</td>
+                    <td>FK00005</td>
+                    <td>Left to War</td>
+                    <td>23456</td>
+                    <td>Test254</td>
+                    <td>Gramed</td>
+                    <td>4</td>
+                    <td>50000</td>
+                    <td>60000</td>
+                    <td>12%</td>
+                    <td>14%</td>
+                </tr>
+                                <tr>
+                    <td>6</td>
+                    <td>FK00006</td>
+                    <td>maze runner</td>
+                    <td>154354</td>
+                    <td>test123</td>
+                    <td>test1234</td>
+                    <td>55</td>
+                    <td>10000</td>
+                    <td>15000</td>
+                    <td>10%</td>
+                    <td>12%</td>
+                </tr>
+                                </tbody>
+                <thead>
+                    <tr>
+                    <th>Total</th>
+                    <th>6 Buku</th>
+                    </tr>
+                </thead>
+            </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <!-- jQuery -->
+    <script src="http://127.0.0.1:8000/AdminLTE/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="http://127.0.0.1:8000/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="http://127.0.0.1:8000/AdminLTE/dist/js/adminlte.min.js"></script>
+</body>
+</html>

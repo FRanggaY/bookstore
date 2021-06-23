@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Book;
 
 class Historyjual extends Model
 {
@@ -14,7 +15,4 @@ class Historyjual extends Model
         'total_harga',
     ];
     public $timestamps = false;
-    function book(){
-		return $this->belongsTo('App\Models\Book');
-	}
 }

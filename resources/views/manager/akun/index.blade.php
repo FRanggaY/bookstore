@@ -6,21 +6,18 @@
 
 
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Form Tambah Akun</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+          </div>
+        </div>
+      </div>
     </div>
 
 
-    <!-- /.col-md-6 -->
           <div class="card-body">
             @if (Session::get('success'))
             <div class="btn btn-success">
@@ -71,18 +68,17 @@
                         </select>
                     </div>
                 <div class="row">
-                <!-- /.col -->
                 <div class="col-8"></div>
                 <div class="col-4">
                     <button type="submit" class=" form-control btn btn-primary">Save</button>
                 </div>
-                <!-- /.col -->
                 </div>
             </form>
           </div>
 
   </div>
 
+</div>
 
 @endsection
 
